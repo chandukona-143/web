@@ -1,0 +1,26 @@
+.cell{
+    display:flex;
+    justify-content: center;
+}
+.innercell{
+    border: 3px solid black;
+    width: 400px;
+    height: 550px;
+    font-size: 25px;
+    background-color: beige;
+}
+.outercell{
+    margin-left: 8px;
+}
+#cal{
+    font-size: medium;
+}
+.logincell{
+    border: 3px solid black;
+    width: 280px;
+    height: 350                                                                                                                                                    px;
+    font-size: 25px;
+    background-color: cadetblue;
+    padding: 5px;
+    margin-top: 180px;
+}

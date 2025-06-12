@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet"  href="style1.css">
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="display">0</div>
+        <div class="buttons">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">/</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">*</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">-</button>
+
+            <button>0</button>
+            <button>.</button>
+            <button class="equal">=</button>
+            <button class="operator">+</button>
+
+            <button class="clear">C</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+let input = '';
+
+document.querySelectorAll('.buttons button').forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === 'C') {
+            // Clear input and reset display
+            input = '';
+            display.textContent = '0';
+        } else if (value === '=') {
+            // Evaluate the expression safely
+            try {
+                input = eval(input).toString();
+                display.textContent = input;
+            } catch {
+                display.textContent = 'Error';
+                input = '';
+            }
+        } else {
+            // Append clicked button value to input and update display
+            input += value;
+            display.textContent = input;
+        }
+    });
+});
+
+        
+    </script>
+</body>
+</html>
+
